@@ -40,7 +40,7 @@ contract OwnerUpOnlyTest is Test {
         upOnly.increment();
     }
 
-    
+    //This time we are sure that it will always fail if we revert for any other reason.
     function testIncrementAsNotOwner() public {
         vm.expectRevert(Unauthorized.selector);
         vm.prank(address(0));
